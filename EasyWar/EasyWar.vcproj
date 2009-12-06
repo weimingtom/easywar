@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\SDL\include;..\SDL_gfx\include;..\SDL_image\include;..\SDL_mixer\include"
+				AdditionalIncludeDirectories="..\SDL\include;..\SDL_gfx\include;..\SDL_image\include;..\SDL_mixer\include;..\EasyWar"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="kernel32.lib SDL.lib SDLmain.lib SDL_gfx.lib SDL_image.lib SDL_mixer.lib $(NOINHERIT)"
+				AdditionalDependencies="SDL.lib SDLmain.lib SDL_gfx.lib SDL_image.lib SDL_mixer.lib $(NOINHERIT)"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\SDL\lib;..\SDL_gfx\lib;..\SDL_image\lib;..\SDL_mixer\lib"
 				GenerateDebugInformation="true"
@@ -95,8 +95,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			OutputDirectory="..\GameExe"
+			IntermediateDirectory="..\MidFile"
 			ConfigurationType="1"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
@@ -118,7 +118,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\SDL\include"
+				AdditionalIncludeDirectories="..\SDL\include;..\SDL_gfx\include;..\SDL_image\include;..\SDL_mixer\include;..\EasyWar"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -137,9 +137,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="kernel32.lib SDL.lib SDLmain.lib $(NOINHERIT)"
+				AdditionalDependencies="SDL.lib SDLmain.lib SDL_gfx.lib SDL_image.lib SDL_mixer.lib $(NOINHERIT)"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\SDL\lib"
+				AdditionalLibraryDirectories="..\SDL\lib;..\SDL_gfx\lib;..\SDL_image\lib;..\SDL_mixer\lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
@@ -208,16 +208,196 @@
 					>
 				</File>
 				<Filter
-					Name="GUI"
+					Name="Gui"
 					>
 					<File
-						RelativePath=".\GUI.cpp"
+						RelativePath=".\guichan_cpp\actionevent.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Widget.cpp"
+						RelativePath=".\guichan_cpp\basiccontainer.cpp"
 						>
 					</File>
+					<File
+						RelativePath=".\guichan_cpp\cliprectangle.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\color.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\defaultfont.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\event.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\exception.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\focushandler.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\font.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\genericinput.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\graphics.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\gui.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\guichan.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\image.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\imagefont.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\inputevent.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\key.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\keyevent.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\keyinput.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\mouseevent.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\mouseinput.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\rectangle.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\selectionevent.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan_cpp\widget.cpp"
+						>
+					</File>
+					<Filter
+						Name="widget"
+						>
+						<File
+							RelativePath=".\guichan_cpp\widgets\button.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\checkbox.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\container.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\dropdown.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\icon.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\imagebutton.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\label.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\listbox.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\radiobutton.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\scrollarea.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\slider.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\tab.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\tabbedarea.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\textbox.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\textfield.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\window.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="sdl"
+						>
+						<File
+							RelativePath=".\guichan_cpp\sdl\sdl.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\sdl\sdlgraphics.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\sdl\sdlimage.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\sdl\sdlimageloader.cpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan_cpp\sdl\sdlinput.cpp"
+							>
+						</File>
+					</Filter>
 				</Filter>
 			</Filter>
 			<Filter
@@ -306,20 +486,268 @@
 					>
 				</File>
 				<File
+					RelativePath=".\guichan.hpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Unit2D.h"
 					>
 				</File>
 				<Filter
-					Name="GUI"
+					Name="Gui"
 					>
 					<File
-						RelativePath=".\GUI.h"
+						RelativePath=".\guichan\actionevent.hpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Widget.h"
+						RelativePath=".\guichan\actionlistener.hpp"
 						>
 					</File>
+					<File
+						RelativePath=".\guichan\allegro.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\basiccontainer.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\cliprectangle.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\color.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\deathlistener.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\defaultfont.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\event.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\exception.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\focushandler.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\focuslistener.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\font.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\genericinput.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\glut.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\graphics.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\gui.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\hge.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\image.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\imagefont.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\imageloader.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\input.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\inputevent.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\key.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\keyevent.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\keyinput.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\keylistener.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\listmodel.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\mouseevent.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\mouseinput.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\mouselistener.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\opengl.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\openlayer.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\platform.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\rectangle.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\sdl.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\selectionevent.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\selectionlistener.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\widget.hpp"
+						>
+					</File>
+					<File
+						RelativePath=".\guichan\widgetlistener.hpp"
+						>
+					</File>
+					<Filter
+						Name="widget"
+						>
+						<File
+							RelativePath=".\guichan\widgets\button.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\checkbox.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\container.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\dropdown.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\icon.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\imagebutton.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\label.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\listbox.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\radiobutton.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\scrollarea.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\slider.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\tab.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\tabbedarea.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\textbox.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\textfield.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\window.hpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="sdl"
+						>
+						<File
+							RelativePath=".\guichan\sdl\sdlgraphics.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\sdl\sdlimage.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\sdl\sdlimageloader.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\sdl\sdlinput.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\sdl\sdlpixel.hpp"
+							>
+						</File>
+					</Filter>
 				</Filter>
 			</Filter>
 			<Filter

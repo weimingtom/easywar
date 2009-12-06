@@ -51,6 +51,10 @@ public:
 	{
 		return m_KeyState[key];
 	}
+	static SDL_Event* _GetEvtStruct()	//底层接口，不推荐使用
+	{
+		return &m_evt;
+	}
 
 protected:
 	static bool m_mouseKeyState[2];		//鼠标按键状态
@@ -58,6 +62,8 @@ protected:
 	static int m_mouseX;				//鼠标位置X
 	static int m_mouseY;				//鼠标位置Y
 	static Uint8 *m_KeyState;			//按键状态
+
+	static SDL_Event m_evt;				//事件结构
 
 };
 

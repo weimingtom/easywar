@@ -9,6 +9,7 @@
 #include "Graph.h"
 #include "Input.h"
 #include "Sound.h"
+#include "guichan.hpp"	//GUI系统
 
 using namespace std;
 
@@ -33,7 +34,7 @@ public:
 	GameFrame();
 	~GameFrame();
 
-	void Initial( int wid, int hei, char* wndName= "Demo", char* icon= NULL, bool fullscreen= false );
+	void Initial( int wid, int hei, char* wndName = "Demo", char* icon = NULL, bool fullscreen = false );
 													//初始化
 	void Running();									//运行中
 	void Destroy();									//结束
