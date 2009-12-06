@@ -19,19 +19,19 @@ void Advanced2D::Run( void* host, unsigned int time )
 	list<Unit2D*>::iterator unitPt;
 
 	//äÖÈ¾µ×²¿²ã
-	for( unitPt= m_2dsBottom.begin(); unitPt != m_2dsBottom.end(); unitPt++ )
+	for( unitPt = m_2dsBottom.begin(); unitPt != m_2dsBottom.end(); unitPt++ )
 	{
 		(*unitPt)->Update( time );
 	}
 
 	//äÖÈ¾ÖÐ²ã
-	for( unitPt= m_2dsMid.begin(); unitPt != m_2dsMid.end(); unitPt++ )
+	for( unitPt = m_2dsMid.begin(); unitPt != m_2dsMid.end(); unitPt++ )
 	{
 		(*unitPt)->Update( time );
 	}
 
 	//äÖÈ¾Top²ã
-	for( unitPt= m_2dsTop.begin(); unitPt != m_2dsTop.end(); unitPt++ )
+	for( unitPt = m_2dsTop.begin(); unitPt != m_2dsTop.end(); unitPt++ )
 	{
 		(*unitPt)->Update( time );
 	}

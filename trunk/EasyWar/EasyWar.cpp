@@ -12,9 +12,9 @@ AdvancedFrame g_game;
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//х╚фа
-	bool fullScreen= argc > 1 ? true : false;
+	bool fullScreen = argc > 1 ? true : false;
 
-	g_game.Initial( 320, 240, "EasyWar", "Tank.bmp", fullScreen );
+	g_game.Initial( 400, 300, "EasyWar", "Tank.bmp", fullScreen );
 	g_game.SetFPS( 60 );
 
 	//////Demo

@@ -16,8 +16,8 @@ public:
 	void Destroy();										//摧毁函数
 	int LoadSE( const char* fileName );					//加载一个音效声音
 	int LoadBGM( const char* fileName );				//加载一个背景音乐
-	void PlaySE( int num, int loop= 0 );				//播放音效
-	void PlayBGM( int num, int loop= -1 );				//播放背景音乐
+	void PlaySE( int num, int loop = 0 );				//播放音效
+	void PlayBGM( int num, int loop = -1 );				//播放背景音乐
 	void StopBGM();										//暂停BGM的播放
 	void StopSE();										//暂停SE的播放
 	void FreeAllSE();									//释放所有的SE

@@ -17,7 +17,7 @@ public:
 															//根据一张图片及格式自动创建一个动画序列
 	void Play( int loop );									//播放（0为无限循环播放）
 	void Stop();											//停止播放（无显示）
-	void Pause( int frame= 0 );								//暂停播放（有显示）
+	void Pause( int frame = 0 );							//暂停播放（有显示）
 	void SetFrameTime( unsigned int interval );				//设置每帧的间隔时间
 	void Duplicate( Animation& orgAni );					//产生目标的副本
 

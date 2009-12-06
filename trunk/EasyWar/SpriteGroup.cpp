@@ -25,7 +25,7 @@ void SpriteGroup::SetSize( int groupsize )
 bool SpriteGroup::AddSprite( int index, const char* fileName )
 {
 	FILE* pic;
-	pic= fopen( fileName, "rb");
+	pic = fopen( fileName, "rb");
 
 	if( pic == NULL )								//文件不存在，则添加失败
 	{

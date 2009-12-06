@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Sound.h"
 
-Sound* Sound::m_me= NULL;
+Sound* Sound::m_me = NULL;
 
 
 Sound::Sound()
@@ -17,7 +17,7 @@ Sound* Sound::GetSingle()
 {
 	if( m_me == NULL )
 	{
-		m_me= new Sound();
+		m_me = new Sound();
 	}
 
 	return m_me;
@@ -34,7 +34,7 @@ void Sound::Destroy()
 		FreeAllBGM();
 
 		delete m_me;
-		m_me= NULL;
+		m_me = NULL;
 	}
 
 }
@@ -42,14 +42,14 @@ void Sound::Destroy()
 //初始化音频设备
 bool Sound::InitDevice()
 {
-	int TMP_FREQ= MIX_DEFAULT_FREQUENCY;
-	Uint16 TMP_FORMAT= MIX_DEFAULT_FORMAT;
-	int TMP_CHUNK_SIZE= 512;
+	int TMP_FREQ = MIX_DEFAULT_FREQUENCY;
+	Uint16 TMP_FORMAT = MIX_DEFAULT_FORMAT;
+	int TMP_CHUNK_SIZE = 512;
 
 	//4通道混音
-	int result=	Mix_OpenAudio(TMP_FREQ,TMP_FORMAT,MAX_CHANNEL,TMP_CHUNK_SIZE);
+	int result =	Mix_OpenAudio(TMP_FREQ,TMP_FORMAT,MAX_CHANNEL,TMP_CHUNK_SIZE);
 
-	m_curChannel= 0;
+	m_curChannel = 0;
 
 	return result == 1 ? true : false;
 }
@@ -57,7 +57,7 @@ bool Sound::InitDevice()
 //释放所有的SE
 void Sound::FreeAllSE()
 {
-	size_t len= m_allSE.size();
+	size_t len = m_allSE.size();
 
 	for( size_t i(0); i< len; i++ )
 	{
@@ -70,7 +70,7 @@ void Sound::FreeAllSE()
 //释放所有的BGM
 void Sound::FreeAllBGM()
 {
-	size_t len= m_allBGM.size();
+	size_t len = m_allBGM.size();
 
 	for( size_t i(0); i< len; i++ )
 	{
@@ -87,7 +87,7 @@ void Sound::PlaySE( int num, int loop )
 
 	if( m_curChannel >= MAX_CHANNEL )
 	{
-		m_curChannel= 0;
+		m_curChannel = 0;
 	}
 }
 
@@ -102,7 +102,7 @@ int Sound::LoadSE( const char* fileName )
 {
 	Mix_Chunk* music;
 
-	music= Mix_LoadWAV( fileName );
+	music = Mix_LoadWAV( fileName );
 
 	//加载失败
 	if( music == NULL )
@@ -120,7 +120,7 @@ int Sound::LoadBGM( const char* fileName )
 {
 	Mix_Music* music;
 
-	music= Mix_LoadMUS( fileName );
+	music = Mix_LoadMUS( fileName );
 
 	//加载失败
 	if( music == NULL )

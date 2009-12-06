@@ -15,7 +15,7 @@ public:
 	~Graph();
 	void Destory();								//销毁（如果存在的话）
 	bool IsWndExist();							//窗口已存在
-	void CreateWnd( int wid, int hei, bool fullscreen= false );
+	void CreateWnd( int wid, int hei, bool fullscreen = false );
 												//按照指定宽高创建一个窗口
 	static Graph* GetSingle();					//获取本类的单件
 	int AddSpriteGroup( int size );				//添加一个SpriteGroup组（返回该组的索引）
@@ -34,6 +34,8 @@ public:
 												//绘制一个Sprite到窗口（旋转、缩放）
 	void Draw( int group, int sprite, int x, int y, int alpha );
 												//绘制一个Sprite到窗口（半透明混合）【暂有问题】
+
+	SDL_Surface* _GetSurface();					//底层接口，一般不推荐使用
 
 protected:
 	Graph();

@@ -65,7 +65,7 @@ void GameFrame::Running()
 		}
 
 		map<string,Logic*>::iterator logic;
-		vector<map<string,Logic*>::iterator> corpse;	//用于存储死亡的Logic的迭代器
+		vector<map<string,Logic*>::iterator> corpse;	//用于存储死亡的Logic的迭代器的容器
 
 		if( m_autoClear )
 		{
