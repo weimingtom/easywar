@@ -318,15 +318,7 @@
 							>
 						</File>
 						<File
-							RelativePath=".\guichan_cpp\widgets\checkbox.cpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan_cpp\widgets\container.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\dropdown.cpp"
 							>
 						</File>
 						<File
@@ -338,43 +330,11 @@
 							>
 						</File>
 						<File
-							RelativePath=".\guichan_cpp\widgets\label.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\listbox.cpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan_cpp\widgets\radiobutton.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\guichan_cpp\widgets\scrollarea.cpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan_cpp\widgets\slider.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\tab.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\tabbedarea.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\textbox.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\textfield.cpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan_cpp\widgets\window.cpp"
 							>
 						</File>
 					</Filter>
@@ -672,15 +632,7 @@
 							>
 						</File>
 						<File
-							RelativePath=".\guichan\widgets\checkbox.hpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan\widgets\container.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\dropdown.hpp"
 							>
 						</File>
 						<File
@@ -692,43 +644,11 @@
 							>
 						</File>
 						<File
-							RelativePath=".\guichan\widgets\label.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\listbox.hpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan\widgets\radiobutton.hpp"
 							>
 						</File>
 						<File
-							RelativePath=".\guichan\widgets\scrollarea.hpp"
-							>
-						</File>
-						<File
 							RelativePath=".\guichan\widgets\slider.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\tab.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\tabbedarea.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\textbox.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\textfield.hpp"
-							>
-						</File>
-						<File
-							RelativePath=".\guichan\widgets\window.hpp"
 							>
 						</File>
 					</Filter>

@@ -34,14 +34,9 @@ private:
 	gcn::SDLGraphics m_guiGraph;
 	gcn::SDLInput m_guiInput;
 	gcn::Container m_guiContainer;
-	gcn::Button m_button;
 	gcn::ImageButton m_imgButton;
-	gcn::Icon m_icon;
 	gcn::SDLImage* m_butImg;
-	gcn::SDLImage* m_iconImg;
 	gcn::SDLImageLoader m_sdlImgLoader;
-	gcn::Window m_wnd;
-	gcn::CheckBox m_check;
 
 	bool m_iconVisable;
 
@@ -54,7 +49,7 @@ private:
 class mouseEvt: public gcn::MouseListener
 {
 public:
-	virtual void mousePressed( gcn::MouseEvent& mouseEvent )
+	virtual void mouseReleased( gcn::MouseEvent& mouseEvent )
 	{
 		string widgetID = mouseEvent.getSource()->getId();
 
@@ -62,12 +57,8 @@ public:
 		if( widgetID == "bt1" )
 		{
 			ADVANCE_FRAME( m_entity->m_host )->AddLogic( "Demo02", CREATE_LOGIC(Demo02) );
-			m_entity->Pause();
-//			m_entity->Exit();
-
-		}else if( widgetID == "bt2" )
-		{
-			m_entity->m_check.setSelected( true );
+//			m_entity->Pause();
+			m_entity->Exit();
 		}
 	}
 	

@@ -1,10 +1,13 @@
 #include "stdafx.h"
 #include "Demo02.h"
 
+int groupNum;
+
 //初始化
 void Demo02::Init( void* host )
 {
-	GAME_FRAME( host )->AutoClear( true );
+	groupNum = DRAW.AddSpriteGroup( 1 );
+	DRAW.AddSprite( groupNum, 0, "bg2.png" );
 
 	int bgmID = SND.LoadBGM("close.wav");
 
@@ -14,7 +17,8 @@ void Demo02::Init( void* host )
 //每帧运行
 void Demo02::Run( void* host, unsigned int time  )
 {
-	;
+	DRAW.Draw( groupNum, 0, 0, 0 );
+	DRAW.Flush();
 }
 
 //结束
