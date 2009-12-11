@@ -6,6 +6,7 @@
 #include "AdvancedFrame.h"
 
 #include "Demo01.h"
+#include "Demo02.h"
 
 AdvancedFrame g_game;
 

@@ -7,7 +7,7 @@
 using namespace std;
 
 //Logic状态枚举
-enum{ eLogicInit, eLogicRun, eLogicEnd, eLogicDead, eLogicPause };
+enum{ eLogicInit, eLogicRun, eLogicEnd, eLogicDead, eLogicPause, eLogicSleep };
 
 //Logic消息结构
 struct sLogicMsg
@@ -35,6 +35,8 @@ public:
 	virtual void Init( void* host ) = 0;		//初始化
 	virtual void Run( void* host, unsigned int time ) = 0;	
 												//每帧运行（time为上帧到这帧的毫秒数）
+	virtual void Sleep( void* host );			//被暂停时被调用一次
+	virtual void Awake( void* host );			//醒来时被调用一次
 	virtual void End( void* host ) = 0;			//结束
 
 private:

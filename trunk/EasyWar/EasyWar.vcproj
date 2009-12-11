@@ -185,6 +185,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Demo02.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\EasyWar.cpp"
 				>
 			</File>
@@ -468,6 +472,10 @@
 			>
 			<File
 				RelativePath=".\Demo01.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Demo02.h"
 				>
 			</File>
 			<Filter

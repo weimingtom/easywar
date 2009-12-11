@@ -1,6 +1,7 @@
 #pragma once
 #include "Logic.h"
 #include "AdvancedFrame.h"
+#include "Demo02.h"
 
 //方向
 enum{ eDirUp= 0, eDirDown, eDirLeft, eDirRight };
@@ -15,7 +16,8 @@ public:
 	virtual void Init( void* host );					//初始化
 	virtual void Run( void* host, unsigned int time  );	//每帧运行
 	virtual void End( void* host );						//结束
-
+	virtual void Sleep( void* host );					//暂停时执行一次
+	
 private:
 	Animation m_tank[4];								//坦克动画们
 	Animation m_bg;										//背景
@@ -25,6 +27,8 @@ private:
 	int m_dir;											//方向
 	int m_nextDir;										//下次一要转的方向
 	int m_sndId;										//声音的ID
+
+	void* m_host;
 
 	gcn::Gui m_gui;
 	gcn::SDLGraphics m_guiGraph;
@@ -57,15 +61,9 @@ public:
 		//判断是哪个按键按下的
 		if( widgetID == "bt1" )
 		{
-			if(	m_entity->m_iconVisable )
-			{
-				m_entity->m_iconVisable = false;
-			}else
-			{
-				m_entity->m_iconVisable = true;
-			}
-
-			m_entity->m_wnd.setVisible( m_entity->m_iconVisable );
+			ADVANCE_FRAME( m_entity->m_host )->AddLogic( "Demo02", CREATE_LOGIC(Demo02) );
+			m_entity->Pause();
+//			m_entity->Exit();
 
 		}else if( widgetID == "bt2" )
 		{

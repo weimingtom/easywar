@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "Demo01.h"
 
+
 #define ANI_SPEED	50
 
 
 void Demo01::Init( void* host )
 {
+	m_host = host;
+
 	//坦克的初始位置和方向
 	m_x = 120;
 	m_y = 0;
@@ -150,7 +153,16 @@ void Demo01::Run( void* host, unsigned int time  )
 	m_guiInput.pushInput( *Input::_GetEvtStruct() );
 	m_gui.logic();
 	m_gui.draw();
-	
+
+}
+
+void Demo01::Sleep( void* host )
+{
+	m_bg.Stop();
+	for( int i(0); i < 4; i++ )
+	{
+		m_tank[i].Stop();
+	}
 }
 
 void Demo01::End( void* host )
@@ -158,4 +170,11 @@ void Demo01::End( void* host )
 	delete m_butImg;
 	delete m_iconImg;
 	delete m_evtListener;
+
+	m_bg.Leave();
+	for( int i(0); i < 4; i++ )
+	{
+		m_tank[i].Leave();
+	}
+
 }
