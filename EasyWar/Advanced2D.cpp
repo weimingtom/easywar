@@ -8,60 +8,49 @@ Advanced2D::Advanced2D()
 Advanced2D::~Advanced2D()
 {
 }
+
 //初始化
 void Advanced2D::Init( void* host )
 {
+	for( int i = eLevelBottom; i < eMaxLevel; i++ )
+	{
+		m_2dsLevels[i] = new Unit2D();
+		m_2dsLevels[i]->SetHead();
+		m_listTail[i] = m_2dsLevels[i];
+	}
 }
 
 //每帧运行（time为上帧到这帧的毫秒数）
 void Advanced2D::Run( void* host, unsigned int time )
 {
-	list<Unit2D*>::iterator unitPt;
+	Unit2D* point;
 
-	//渲染底部层
-	for( unitPt = m_2dsBottom.begin(); unitPt != m_2dsBottom.end(); unitPt++ )
+	for( int i = eLevelBottom; i < eMaxLevel; i++ )
 	{
-		(*unitPt)->Update( time );
+		point = m_2dsLevels[i]->m_next;
+		while( point )
+		{
+			point->Update( time );
+			point = point->m_next;
+		}
 	}
-
-	//渲染中层
-	for( unitPt = m_2dsMid.begin(); unitPt != m_2dsMid.end(); unitPt++ )
-	{
-		(*unitPt)->Update( time );
-	}
-
-	//渲染Top层
-	for( unitPt = m_2dsTop.begin(); unitPt != m_2dsTop.end(); unitPt++ )
-	{
-		(*unitPt)->Update( time );
-	}
-
 }
 
 //结束
 void Advanced2D::End( void* host )
 {
-	m_2dsTop.clear();
-	m_2dsMid.clear();
-	m_2dsBottom.clear();
+	for( int i = eLevelBottom; i < eMaxLevel; i++ )
+	{
+		delete m_2dsLevels[i];
+	}
 }
 
 //添加一个渲染对象到指定层的渲染列表
 void Advanced2D::AddUnit( Unit2D* obj, int level )
 {
-	switch( level )
-	{
-	case eLevelTop:
-		m_2dsTop.push_back( obj );
-		break;
-	case eLevelMid:
-		m_2dsMid.push_back( obj );
-		break;
-	case eLevelBottom:
-		m_2dsBottom.push_back( obj );
-		break;
-	default:
-		break;
-	}
+	m_listTail[level]->SetNext( obj );
+	obj->SetPrior( m_listTail[level] );
+	m_listTail[level] = obj;
+	m_listTail[level]->SetNext( NULL );
 
 }

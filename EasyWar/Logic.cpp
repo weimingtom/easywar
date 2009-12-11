@@ -27,6 +27,10 @@ void Logic::Update( unsigned int time )
 		m_LogicState = eLogicDead;
 		break;
 	case eLogicPause:	//暂停态
+		Sleep( m_host );
+		m_LogicState = eLogicSleep;
+		break;
+	case eLogicSleep:	//睡眠（暂停态执行一次后）
 	case eLogicDead:	//死亡态
 	default:
 		break;
@@ -60,6 +64,7 @@ void Logic::Pause()
 void Logic::Resume()
 {
 	m_LogicState = m_LastState;
+	Awake( m_host );
 }
 
 //退出Logic
@@ -98,4 +103,14 @@ bool Logic::GetMessage( sLogicMsg* msg )
 	m_msg.pop();
 
 	return true;
+}
+
+//被暂停时被调用一次
+void Logic::Sleep( void* host )
+{
+}
+
+//醒来时被调用一次
+void Logic::Awake( void* host )
+{
 }
