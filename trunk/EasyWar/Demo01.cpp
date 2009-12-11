@@ -48,62 +48,27 @@ void Demo01::Init( void* host )
 	m_gui.setInput( &m_guiInput );
 	m_gui.setTop( &m_guiContainer );
 
-	m_guiContainer.add( &m_button );
-	m_guiContainer.add( &m_wnd );
-	m_guiContainer.add( &m_icon );
+	m_guiContainer.add( &m_imgButton );
 	m_guiContainer.setPosition( 0, 0 );
 	m_guiContainer.setSize( 640, 480 );
 	m_guiContainer.setOpaque( false );
 
-	m_wnd.add( &m_imgButton );
-	m_wnd.add( &m_check );
-
-	//放置按钮
-	gcn::Color theColor1( 200, 0, 0, 200 );
-	gcn::Color theColor2( 0, 200, 0, 200 );
-	gcn::Color theColor3( 0, 0, 200, 200 );
-	m_button.setSize( 60, 20 );
-	m_button.setPosition( 300, 20 );
-	m_button.setFrameSize( 0 );
-	m_button.setBaseColor( theColor1 );
-	m_button.setBackgroundColor( theColor2 );
-	m_button.setForegroundColor( theColor3 );
-	m_button.setSelectionColor( theColor3 );
 	//放置带图片的按钮
 	m_butImg = new gcn::SDLImage( NULL, true );
 	m_butImg->setImageLoader( &m_sdlImgLoader );
 	gcn::Image* tmp;
-	tmp = m_butImg->load("boost1.png");
+	tmp = m_butImg->load("button.png");
 	delete m_butImg;
 	m_butImg = (gcn::SDLImage*)tmp;
 	m_imgButton.setFrameSize( 0 );
 	m_imgButton.setImage( m_butImg );
-	m_imgButton.setSize( 32, 32 );
-	m_imgButton.setPosition( 50, 30 );
-	//放置图标
-	m_iconImg = new gcn::SDLImage( NULL, true );
-	m_iconImg->setImageLoader( &m_sdlImgLoader );
-	tmp = m_iconImg->load("boost2.png");
-	delete m_iconImg;
-	m_iconImg = (gcn::SDLImage*)tmp;
-	m_icon.setImage( m_iconImg );
-	m_icon.setSize( 100, 100 );
-	m_icon.setPosition( 0, 0 );
-	m_iconVisable = true;
-	//放置窗口
-	m_wnd.setSize( 120, 90 );
-	m_wnd.setPosition( 250, 70 );
-	m_wnd.setBaseColor( theColor2 );
-	//放置CheckBox
-	m_check.setSize( 20, 20 );
-	m_check.setPosition( 5, 5 );
+	m_imgButton.setSize( 59, 59 );
+	m_imgButton.setPosition( 10, 10 );
 
 	//按钮事件绑定，设置侦听器
 	m_evtListener = new mouseEvt;
 	((mouseEvt*)m_evtListener)->SetEntity( this );
-	m_button.setId( "bt1" );
-	m_button.addMouseListener( m_evtListener );
-	m_imgButton.setId( "bt2" );
+	m_imgButton.setId( "bt1" );
 	m_imgButton.addMouseListener( m_evtListener );
 	
 }
@@ -168,7 +133,6 @@ void Demo01::Sleep( void* host )
 void Demo01::End( void* host )
 {
 	delete m_butImg;
-	delete m_iconImg;
 	delete m_evtListener;
 
 	m_bg.Leave();

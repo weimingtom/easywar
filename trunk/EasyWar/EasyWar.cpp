@@ -15,8 +15,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//х╚фа
 	bool fullScreen = argc > 1 ? true : false;
 
-	g_game.Initial( 400, 300, "EasyWar", "Tank.bmp", fullScreen );
-	g_game.SetFPS( 60 );
+	g_game.Initial( 640, 480, "EasyWar", "Tank.bmp", fullScreen );
+//	g_game.SetFPS( 60 );
 
 	//////Demo
 	g_game.AddLogic( "Demo01", CREATE_LOGIC( Demo01 ) );

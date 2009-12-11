@@ -45,6 +45,7 @@
  * For comments regarding functions please see the header file.
  */
 #include "stdafx.h"
+
 #include "guichan/widgets/button.hpp"
 
 #include "guichan/exception.hpp"
