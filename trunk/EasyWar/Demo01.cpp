@@ -97,7 +97,7 @@ void Demo01::Run( void* host, unsigned int time  )
 	if( m_dir != m_nextDir )
 	{
 		m_dir = m_nextDir;
-	//	SND.PlaySE( m_sndId );
+		SND.PlaySE( m_sndId );
 
 		for( int i(0); i< 4; i++ )
 		{

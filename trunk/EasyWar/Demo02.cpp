@@ -18,7 +18,6 @@ void Demo02::Init( void* host )
 void Demo02::Run( void* host, unsigned int time  )
 {
 	DRAW.Draw( groupNum, 0, 0, 0 );
-	DRAW.Flush();
 }
 
 //½áÊø
