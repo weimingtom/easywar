@@ -337,6 +337,10 @@
 							RelativePath=".\guichan_cpp\widgets\slider.cpp"
 							>
 						</File>
+						<File
+							RelativePath=".\guichan_cpp\widgets\StatuButton.cpp"
+							>
+						</File>
 					</Filter>
 					<Filter
 						Name="sdl"
@@ -649,6 +653,10 @@
 						</File>
 						<File
 							RelativePath=".\guichan\widgets\slider.hpp"
+							>
+						</File>
+						<File
+							RelativePath=".\guichan\widgets\StatuButton.h"
 							>
 						</File>
 					</Filter>

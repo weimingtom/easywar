@@ -81,6 +81,7 @@
 #include "guichan/widgets/imagebutton.hpp"
 #include "guichan/widgets/slider.hpp"
 #include "guichan/widgets/radiobutton.hpp"
+#include "guichan/widgets/StatuButton.h"
 #include "guichan/sdl/sdlgraphics.hpp"
 #include "guichan/sdl/sdlimage.hpp"
 #include "guichan/sdl/sdlimageloader.hpp"
