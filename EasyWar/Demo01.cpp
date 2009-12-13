@@ -49,6 +49,7 @@ void Demo01::Init( void* host )
 	m_gui.setTop( &m_guiContainer );
 
 	m_guiContainer.add( &m_imgButton );
+	m_guiContainer.add( &m_statButton );
 	m_guiContainer.setPosition( 0, 0 );
 	m_guiContainer.setSize( 640, 480 );
 	m_guiContainer.setOpaque( false );
@@ -64,6 +65,13 @@ void Demo01::Init( void* host )
 	m_imgButton.setImage( m_butImg );
 	m_imgButton.setSize( 59, 59 );
 	m_imgButton.setPosition( 10, 10 );
+
+	m_statButton.setPosition( 300, 10 );
+	m_statButton.setFrameSize( 0 );
+	m_statButton.setSize( 162, 66 );
+	m_statButton.setNormalImage("bt1.png");
+	m_statButton.setHoverImage("bt2.png");
+	m_statButton.setPushedImage("bt3.png");
 
 	//按钮事件绑定，设置侦听器
 	m_evtListener = new mouseEvt;

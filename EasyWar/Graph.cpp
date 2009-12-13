@@ -58,7 +58,7 @@ void Graph::CreateWnd( int wid, int hei, bool fullscreen )
 		m_mainWnd = SDL_SetVideoMode( wid, hei, 32, SDL_ASYNCBLIT | SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_FULLSCREEN );
 	}else
 	{
-		m_mainWnd = SDL_SetVideoMode( 640, 480, 32, SDL_ASYNCBLIT | SDL_HWSURFACE | SDL_DOUBLEBUF );
+		m_mainWnd = SDL_SetVideoMode( wid, hei, 32, SDL_ASYNCBLIT | SDL_HWSURFACE | SDL_DOUBLEBUF );
 	}
 
 	m_wndWid = wid;

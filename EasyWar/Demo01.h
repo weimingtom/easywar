@@ -35,6 +35,7 @@ private:
 	gcn::SDLInput m_guiInput;
 	gcn::Container m_guiContainer;
 	gcn::ImageButton m_imgButton;
+	gcn::StatuButton m_statButton;
 	gcn::SDLImage* m_butImg;
 	gcn::SDLImageLoader m_sdlImgLoader;
 
